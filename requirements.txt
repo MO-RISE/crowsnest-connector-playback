@@ -1,0 +1,9 @@
+paho-mqtt
+streamz
+pydantic
+datamodel-code-generator
+environs
+pandas
+pandasgui
+networkx
+environs

@@ -1,0 +1,34 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Propeller",
+    "description": "Reading from a propeller sensor",
+    "required": [
+        "sensor_id",
+        "rpm"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "rpm": {
+            "type": "number",
+            "title": "Propeller RPM",
+            "description": "Propeller RPM in revolutions per minute"
+        },
+        "pitch_angle": {
+            "type": "number",
+            "title": "Pitch angle",
+            "description": "Propeller pitch angle"
+        },
+        "location": {
+            "description": "Location of the propeller in the BF frame of reference.",
+            "$ref": "../core/location.json"
+        },
+        "wrench": {
+            "$ref": "../core/wrench.json"
+        }
+    }
+}

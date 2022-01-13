@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Position",
+    "description": "Reading from a position sensor",
+    "required": [
+        "sensor_id",
+        "location",
+        "position"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "location": {
+            "description": "Location of the reporting sensor in the BF frame of reference.",
+            "$ref": "../core/location.json"
+        },
+        "position": {
+            "$ref": "../core/position.json"
+        },
+        "semi_major_axis": {
+            "type": "number",
+            "title": "Semi-major axis",
+            "description": "Semi-major axis of the GNSS sensor's error ellipse for 1 standard deviation"
+        },
+        "semi_minor_axis": {
+            "type": "number",
+            "title": "Semi-minor axis",
+            "description": "Semi-minor axis of the GNSS sensor's error ellipse for 1 standard deviation"
+        },
+        "azimuth": {
+            "type": "number",
+            "title": "Azimuth",
+            "description": "Azimuth of the semi-major axis of the GNSS sensor's error ellipse with respect to True North in degrees"
+        }
+    }
+}

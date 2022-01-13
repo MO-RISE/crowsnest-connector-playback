@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Ground velocity",
+    "description": "Reading from a sensor providing information about the ground velocity",
+    "required": [
+        "sensor_id",
+        "location",
+        "sog",
+        "cog"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "location": {
+            "description": "Location of the reporting sensor in the BF frame of reference.",
+            "$ref": "../core/location.json"
+        },
+        "sog": {
+            "type": "number",
+            "title": "Speed over ground [knots]",
+            "description": "Reported speed over ground."
+        },
+        "cog": {
+            "type": "number",
+            "title": "Course over ground",
+            "description": "Reported course over ground [degrees] relative True North"
+        }
+    }
+}

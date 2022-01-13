@@ -1,0 +1,141 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "AIS Vessel",
+    "description": "Data of a specific vessel communicated through AIS messages.",
+    "required": [
+        "sensor_id",
+        "timestamp",
+        "mmsi",
+        "class",
+        "position"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Timestamp of AIS message",
+            "description": "Date and time when the message was received, expressed according to the ISO 8601 standard."
+        },
+        "mmsi": {
+            "type": "integer",
+            "title": "MMSI",
+            "description": "MMSI number of the AIS transceiver."
+        },
+        "class": {
+            "type": "string",
+            "enum": [
+                "A",
+                "B"
+            ],
+            "title": "class",
+            "description": "Class of the AIS transceiver, defined by the AIS messages communicating the data of the vessel (A: messages 1,2,3, and 5; B: messages 18, 19, and 24)."
+        },
+        "position": {
+            "$ref": "../core/position.json"
+        },
+        "heading": {
+            "type": "number",
+            "title": "Heading",
+            "description": "Heading of the vessel with respect to True North [degrees]"
+        },
+        "sog": {
+            "type": "number",
+            "title": "SOG",
+            "description": "Speed Over Ground of the vessel [knots]."
+        },
+        "cog": {
+            "type": "number",
+            "title": "COG",
+            "description": "Course Over Ground of the vessel with respect to True North [degrees]"
+        },
+        "rate_of_turn": {
+            "type": "number",
+            "title": "Rate of turn",
+            "description": "Rate of turn of the vessel [degrees/minute], positive to starboard"
+        },
+        "imo_number": {
+            "type": "integer",
+            "title": "IMO number",
+            "description": "IMO number of the vessel"
+        },
+        "draught": {
+            "type": "number",
+            "title": "Draught",
+            "description": "Draught of the vessel [m]"
+        },
+        "navigational_status": {
+            "type": "string",
+            "enum": [
+                "Under way using engine",
+                "At anchor",
+                "Not under command",
+                "Restricted maneuverability",
+                "Constrained by her draught",
+                "Moored",
+                "Aground",
+                "Engaged in fishing",
+                "Under way sailing",
+                "High-speed craft",
+                "Wing in ground",
+                "Power-driven vessel towing astern (regional use)",
+                "Power-driven vessel pushing ahead or towing alongside (regional use)",
+                "Reserved",
+                "AIS-SART, MOB-AIS, EPIRB-AIS",
+                "Undefined"
+            ],
+            "title": "Navigational status",
+            "description": "Navigational status the vessel, enum values according to AIS specification"
+        },
+        "type_and_cargo": {
+            "type": "integer",
+            "title": "Type and cargo indicator",
+            "description": "Type and cargo indicator of the vessel, according to: https://www.navcen.uscg.gov/pdf/AIS/AISGuide.pdf"
+        },
+        "ship_name": {
+            "type": "string",
+            "title": "Ship name",
+            "description": "The name of this vessel"
+        },
+        "call_sign": {
+            "type": "string",
+            "title": "Call sign",
+            "description": "The call sign of this vessel"
+        },
+        "destination": {
+            "type": "string",
+            "title": "Destination",
+            "description": "The destination of this vessel"
+        },
+        "eta": {
+            "type": "string",
+            "format": "date-time",
+            "title": "ETA",
+            "description": "The ETA to `destination` of this vessel, expressed according to the ISO 8601 standard."
+        },
+        "loa": {
+            "type": "number",
+            "title": "Length Over All",
+            "description": "The length over all (LOA) of this vessel [m]"
+        },
+        "beam": {
+            "type": "number",
+            "title": "Beam",
+            "description": "The beam of this vessel [m]"
+        },
+        "position_accuracy": {
+            "type": "string",
+            "enum": [
+                "high",
+                "low"
+            ],
+            "title": "Position accuracy",
+            "description": "Accuracy of the position (high <= 10 meters; low > 10 meters)."
+        }
+    }
+}

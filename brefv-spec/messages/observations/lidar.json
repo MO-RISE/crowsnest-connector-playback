@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "LIDAR",
+    "description": "Reading from a LIDAR sensor",
+    "default": {},
+    "required": [
+        "sensor_id",
+        "location",
+        "rotation",
+        "points"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "location": {
+            "description": "Location of the reporting sensor in the BF frame of reference.",
+            "$ref": "../core/location.json"
+        },
+        "rotation": {
+            "description": "Rotation of the reporting sensor in the BF frame of reference.",
+            "$ref": "../core/rotation.json"
+        },
+        "points": {
+            "type": "array",
+            "title": "Points",
+            "description": "Points captured by the LIDAR sensor as a list of (x,y,z) points [m] in a right-handed, cartesian frame of reference defined by `location` and `rotation` in relation to the BF frame of reference.",
+            "examples": [
+                [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    1.0,
+                    0.0
+                ]
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Rate of turn",
+    "description": "Reading from a rate of turn sensor",
+    "required": [
+        "sensor_id",
+        "rot"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "rot": {
+            "type": "number",
+            "title": "Rate of turn",
+            "description": "Rate of turn [degrees/minute], positive to starboard"
+        }
+    }
+}

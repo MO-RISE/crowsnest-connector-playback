@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "Heading",
+    "description": "Reading from a heading sensor",
+    "required": [
+        "sensor_id",
+        "heading",
+        "type"
+    ],
+    "properties": {
+        "sensor_id": {
+            "type": "string",
+            "title": "Physical sensor id",
+            "desciption": "Id of the reporting physical sensor equipment"
+        },
+        "heading": {
+            "type": "number",
+            "title": "Heading",
+            "description": "Heading, relative to North [degrees]"
+        },
+        "type": {
+            "type": "string",
+            "title": "Type of sensor",
+            "enum": [
+                "Magnetic",
+                "True"
+            ]
+        }
+    }
+}
