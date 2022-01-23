@@ -16,5 +16,6 @@ RUN mkdir brefv && \
 COPY main.py main.py
 COPY utils.py utils.py
 COPY NTproLogToDF.py NTproLogToDF.py
+COPY data/ data/
 
 CMD ["python3", "main.py"]
