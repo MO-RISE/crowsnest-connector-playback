@@ -13,7 +13,7 @@
       "type": "string",
       "format": "date-time",
       "title": "Sent at",
-      "description": "Date and time when the message was sent from the application processing the sensor data, expressed according to the ISO 8601 standard.",
+      "description": "Date and time when the message was sent from the application processing the raw sensor data, expressed according to the ISO 8601 standard.",
       "examples": [
         "2021-10-07T20:20:39.345+00:00"
       ]
@@ -22,7 +22,7 @@
       "type": "string",
       "format": "uri",
       "title": "Message type",
-      "description": "A reference to a json-schema defining the message type carried by this envelope."
+      "description": "A reference URL to a json-schema defining the message type carried by this envelope."
     },
     "message": {
       "type": "object",

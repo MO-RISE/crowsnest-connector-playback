@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Steering order angle",
+  "description": "Command to an steering-unit that accepts commands in vessel relative degrees",
+  "required": ["target_unit_id", "angle"],
+  "properties": {
+    "target_unit_id": {
+      "type": "string",
+      "title": "Targeted steering unit ID",
+      "desciption": "Id of the reporting physical equipment"
+    },
+    "angle": {
+      "type": "number",
+      "title": "Rudder angle",
+      "description": "Rudder angle in degrees, positive when trailing edge points to port (port angel negative)"
+    },
+    "flap_angle": {
+      "type": "number",
+      "title": "Rudder flap angle",
+      "description": "Rudder flap angle in degrees, positive when trailing edge points to port",
+      "default": 0.0
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Playback of file",
+  "description": "Playback control and actions of log file playback micro service.",
+
+  "required": [],
+
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "Playback ID",
+      "desciption": "Playback identification"
+    },
+
+    "time_stamp": {
+      "type": "string",
+      "title": "Current timestamp",
+      "description": "Current timestamp from recording/log files."
+    },
+
+    "timeline_position": {
+      "type": "number",
+      "title": "Timeline position",
+      "description": "Current frame/row relative time position of total playback interval steps."
+    },
+
+    "duration": {
+      "type": "number",
+      "title": "Duration",
+      "description": "Total duration in seconds for whole log/recording."
+    },
+
+    "is_playing": {
+      "type": "boolean",
+      "title": "Playing",
+      "description": "Boolean value if playback is ongoing[true] or paused[false]."
+    }
+  }
+}

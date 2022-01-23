@@ -24,6 +24,8 @@
             "title": "Type of sensor",
             "enum": [
                 "Magnetic",
+                "Gyro",
+                "IMU",
                 "True"
             ]
         }

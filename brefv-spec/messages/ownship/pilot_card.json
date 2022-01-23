@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Pilot Card",
+  "description": "Short description of an vessel model static information",
+  "required": ["vessel_model_id", "updated"],
+  "properties": {
+    "vessel_model_id": {
+      "type": "string",
+      "title": "Physical sensor id",
+      "desciption": "Id of the reporting physical sensor equipment"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Timestamp of last edit",
+      "description": "Date and time when the vessel model data where edited or updated."
+    },
+
+    "steering_units": {
+        "type":"array",
+        "title": "Steering unit",
+        "description": "Description of steering units",
+        "items": {
+            "type": "object"
+          }
+    },
+
+    "mmsi": {
+      "type": "integer",
+      "title": "MMSI",
+      "description": "MMSI number of the AIS transceiver."
+    },
+
+    "imo_number": {
+      "type": "integer",
+      "title": "IMO number",
+      "description": "IMO number of the vessel"
+    },
+
+    "navigational_status": {
+      "type": "string",
+      "enum": [
+        "Under way using engine",
+        "At anchor",
+        "Not under command",
+        "Restricted maneuverability",
+        "Constrained by her draught",
+        "Moored",
+        "Aground",
+        "Engaged in fishing",
+        "Under way sailing",
+        "High-speed craft",
+        "Wing in ground",
+        "Power-driven vessel towing astern (regional use)",
+        "Power-driven vessel pushing ahead or towing alongside (regional use)",
+        "Reserved",
+        "AIS-SART, MOB-AIS, EPIRB-AIS",
+        "Undefined"
+      ],
+      "title": "Navigational status",
+      "description": "Navigational status the vessel, enum values according to AIS specification"
+    },
+    "type_and_cargo": {
+      "type": "integer",
+      "title": "Type and cargo indicator",
+      "description": "Type and cargo indicator of the vessel, according to: https://www.navcen.uscg.gov/pdf/AIS/AISGuide.pdf"
+    },
+    "ship_name": {
+      "type": "string",
+      "title": "Ship name",
+      "description": "The name of this vessel"
+    },
+    "call_sign": {
+      "type": "string",
+      "title": "Call sign",
+      "description": "The call sign of this vessel"
+    },
+
+    "loa": {
+      "type": "number",
+      "title": "Length Over All",
+      "description": "The length over all (LOA) of this vessel [m]"
+    },
+    "beam": {
+      "type": "number",
+      "title": "Beam",
+      "description": "The beam of this vessel [m]"
+    }
+  }
+}

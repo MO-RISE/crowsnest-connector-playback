@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Steering unit",
+  "description": "Description over vessel model steering unit",
+  "required": ["unit_id"],
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "title": "Unit id",
+      "desciption": "Id of the reporting physical/virtual sensor equipment"
+    },
+    "location": {
+      "description": "Location of the rudder in the BF frame of reference.",
+      "$ref": "../core/location.json"
+    },
+    "readable_id": {
+        "type": "string",
+        "title": "Readable id",
+        "desciption": "Human readable identifier "
+    },
+    "angle_max": {
+      "type": "number",
+      "title": "Rudder angle",
+      "description": "Rudder angle in degrees, positive when trailing edge points to port",
+      "default": 35.0
+    },
+    "angle_min": {
+      "type": "number",
+      "title": "Rudder angle",
+      "description": "Rudder angle in degrees, positive when trailing edge points to port",
+      "default": -35.0
+    },
+
+    "flap_angle_max": {
+      "type": "number",
+      "title": "Rudder flap angle",
+      "description": "Rudder flap angle in degrees, positive when trailing edge points to port",
+      "default": 15.0
+    },
+    "flap_angle_min": {
+      "type": "number",
+      "title": "Rudder flap angle",
+      "description": "Rudder flap angle in degrees, positive when trailing edge points to port",
+      "default": -15.0
+    }
+  }
+}
